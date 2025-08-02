@@ -1,34 +1,34 @@
 # 🕵️ OSINT Username Finder
 
-Ein professionelles **Open Source Intelligence (OSINT)** Tool zur Suche von Benutzernamen und Profilen über das gesamte Internet.
+A professional **Open Source Intelligence (OSINT)** tool for searching usernames and profiles across the internet.
 
 ## 🌟 Features
 
-### 🎯 **Zwei Versionen verfügbar:**
+### 🎯 **Two versions available:**
 
-#### 🔴 **Server Version** (Vollständige OSINT-Funktionalität)
-- ✅ **Live-Verfügbarkeitsprüfung** von Profilen
-- ✅ **Email-Validierung** mit Gravatar-Check
-- ✅ **Telefonnummer-Suche** für Messaging-Apps
-- ✅ **Cross-Reference-Analyse** mit Google-Integration
-- ✅ **Data-Breach-Checking** für Sicherheitsanalyse
-- ✅ **Username-Variationen** automatisch generiert
-- ✅ **Confidence-Scoring** für Ergebnisse
+#### 🔴 **Server Version** (Full OSINT functionality)
+- ✅ **Live availability checking** of profiles
+- ✅ **Email validation** with Gravatar check
+- ✅ **Phone number search** for messaging apps
+- ✅ **Cross-reference analysis** with Google integration
+- ✅ **Data breach checking** for security analysis
+- ✅ **Username variations** automatically generated
+- ✅ **Confidence scoring** for results
 
-#### 🟢 **GitHub Pages Version** (Statische Version)
-- ✅ **Client-seitige Suche** ohne Server
-- ✅ **Direkte Platform-Links** für 30+ Services
-- ✅ **Kategorisierte Suche** nach Plattform-Typ
-- ✅ **Responsive Design** für alle Geräte
-- ✅ **Datenschutz-freundlich** - keine Server-Übertragung
-- ✅ **Sofort verfügbar** über GitHub Pages
+#### 🟢 **GitHub Pages Version** (Static version)
+- ✅ **Client-side search** without server
+- ✅ **Direct platform links** for 30+ services
+- ✅ **Categorized search** by platform type
+- ✅ **Responsive design** for all devices
+- ✅ **Privacy-friendly** - no server transmission
+- ✅ **Instantly available** via GitHub Pages
 
 ## 🚀 Live Demo
 
-### GitHub Pages Version (Empfohlen für die meisten Nutzer)
-**🌐 [Live Demo auf GitHub Pages](https://mou67.github.io/userfinder/)**
+### GitHub Pages Version (Recommended for most users)
+**🌐 [Live Demo on GitHub Pages](https://mou67.github.io/userfinder/)**
 
-### Server Version (Für erweiterte OSINT-Funktionen)
+### Server Version (For advanced OSINT features)
 ```bash
 git clone https://github.com/yourusername/user_finder.git
 cd user_finder
@@ -36,17 +36,17 @@ npm install
 npm start
 ```
 
-## 📱 Unterstützte Plattformen
+## 📱 Supported Platforms
 
 ### 👥 **Social Media**
 - Instagram, TikTok, Twitter/X, Facebook, YouTube
 - Snapchat, Pinterest, VKontakte, Weibo
 
-### 💻 **Entwickler-Plattformen**
+### 💻 **Developer Platforms**
 - GitHub, GitLab, Bitbucket
 - Stack Overflow, HackerNews, Keybase
 
-### 🎨 **Kreative Communities**
+### 🎨 **Creative Communities**
 - DeviantArt, Behance, Dribbble, Flickr
 - SoundCloud, Spotify, Last.fm, Vimeo
 
@@ -61,152 +61,152 @@ npm start
 
 ## 🛠️ Installation & Setup
 
-### Für GitHub Pages Deployment:
+### For GitHub Pages Deployment:
 
-1. **Repository forken oder klonen**
+1. **Fork or clone repository**
 ```bash
 git clone https://github.com/yourusername/user_finder.git
 cd user_finder
 ```
 
-2. **GitHub Pages aktivieren**
-   - Gehen Sie zu **Settings** > **Pages**
+2. **Enable GitHub Pages**
+   - Go to **Settings** > **Pages**
    - Source: **Deploy from a branch**
    - Branch: **main** / **docs**
-   - Speichern
+   - Save
 
-3. **Automatisches Deployment**
-   - Die GitHub Action deployed automatisch bei jedem Push
-   - Ihre Website ist verfügbar unter: `https://yourusername.github.io/user_finder/`
+3. **Automatic deployment**
+   - GitHub Action deploys automatically on every push
+   - Your website is available at: `https://yourusername.github.io/user_finder/`
 
-### Für lokale Server-Version:
+### For local server version:
 
-1. **Dependencies installieren**
+1. **Install dependencies**
 ```bash
 npm install express axios
 ```
 
-2. **Server starten**
+2. **Start server**
 ```bash
 node server.js
 ```
 
-3. **Website öffnen**
+3. **Open website**
 ```
 http://localhost:3000
 ```
 
 ## 🎨 Design Features
 
-### ✨ **Dynamische Animationen**
-- Bewegliche Farbverläufe
-- Schwebende Partikel-Effekte
-- Glasmorphismus mit Blur-Effekten
-- Hover-Animationen mit 3D-Transformationen
+### ✨ **Dynamic Animations**
+- Moving color gradients
+- Floating particle effects
+- Glassmorphism with blur effects
+- Hover animations with 3D transformations
 
 ### 📱 **Responsive Design**
-- Mobile-First Ansatz
-- Touch-optimierte Bedienelemente
-- Adaptive Grid-Layouts
-- Cross-Browser Kompatibilität
+- Mobile-first approach
+- Touch-optimized controls
+- Adaptive grid layouts
+- Cross-browser compatibility
 
-### 🎯 **Benutzerfreundlichkeit**
-- Intuitive Kategorie-Auswahl
-- Live-Feedback bei Eingaben
-- Fortschrittsanzeigen
-- Accessibility-optimiert
+### 🎯 **User Experience**
+- Intuitive category selection
+- Live input feedback
+- Progress indicators
+- Accessibility optimized
 
-## 🔧 Konfiguration
+## 🔧 Configuration
 
 ### GitHub Pages Setup:
 
 1. **Repository Settings**
    - Pages Source: `Deploy from a branch`
-   - Branch: `main` (oder `master`)
-   - Folder: `/ (root)` oder `/docs`
+   - Branch: `main` (or `master`)
+   - Folder: `/ (root)` or `/docs`
 
 2. **Custom Domain (Optional)**
 ```
-# Erstellen Sie eine CNAME-Datei im docs/ Ordner
+# Create a CNAME file in the docs/ folder
 echo "yourdomain.com" > docs/CNAME
 ```
 
 3. **SSL/HTTPS**
-   - Automatisch aktiviert durch GitHub Pages
-   - ✅ Enforce HTTPS (empfohlen)
+   - Automatically enabled by GitHub Pages
+   - ✅ Enforce HTTPS (recommended)
 
-## 🛡️ Datenschutz & Sicherheit
+## 🛡️ Privacy & Security
 
 ### GitHub Pages Version:
-- ✅ **Keine Server-Übertragung** - alle Suchen client-seitig
-- ✅ **Keine Datensammlung** - Privacy by Design
-- ✅ **HTTPS-verschlüsselt** durch GitHub
-- ✅ **Open Source** - vollständig transparent
+- ✅ **No server transmission** - all searches client-side
+- ✅ **No data collection** - Privacy by Design
+- ✅ **HTTPS encrypted** by GitHub
+- ✅ **Open Source** - fully transparent
 
 ### Server Version:
-- ⚠️ **Server-Logs** möglich
-- ⚠️ **API-Aufrufe** zu externen Services
-- ✅ **Keine Datenspeicherung** im Code
+- ⚠️ **Server logs** possible
+- ⚠️ **API calls** to external services
+- ✅ **No data storage** in code
 
 ## 📊 Supported Use Cases
 
-### 🔍 **OSINT-Investigationen**
-- Profil-Recherche für Journalismus
-- Cybersecurity-Investigations
-- Social Engineering Assessment
-- Digital Footprint Analyse
+### 🔍 **OSINT Investigations**
+- Profile research for journalism
+- Cybersecurity investigations
+- Social engineering assessment
+- Digital footprint analysis
 
-### 🎯 **Legitimierte Nutzung**
-- ✅ Eigene Profile finden
-- ✅ Öffentliche Informationen recherchieren
-- ✅ Sicherheitsbewertungen
-- ✅ Journalistische Recherche
+### 🎯 **Legitimate Usage**
+- ✅ Find your own profiles
+- ✅ Research public information
+- ✅ Security assessments
+- ✅ Journalistic research
 
-### ❌ **Nicht geeignet für:**
-- Stalking oder Harassment
-- Illegale Überwachung
-- Verletzung der Privatsphäre
-- Unbefugte Datensammlung
+### ❌ **Not suitable for:**
+- Stalking or harassment
+- Illegal surveillance
+- Privacy violations
+- Unauthorized data collection
 
 ## 🤝 Contributing
 
-Beiträge sind willkommen! Bitte beachten Sie:
+Contributions are welcome! Please note:
 
-1. **Fork** das Repository
-2. **Branch** erstellen für Features
-3. **Pull Request** mit Beschreibung
-4. **Code Review** abwarten
+1. **Fork** the repository
+2. **Create branch** for features
+3. **Pull request** with description
+4. **Wait for code review**
 
-### Entwicklung:
+### Development:
 ```bash
 # Development server
 npm run dev
 
-# Build für Production
+# Build for production
 npm run build
 
-# Tests ausführen
+# Run tests
 npm test
 ```
 
-## 📄 Lizenz
+## 📄 License
 
-MIT License - siehe [LICENSE](LICENSE) für Details.
+MIT License - see [LICENSE](LICENSE) for details.
 
 ## ⚠️ Disclaimer
 
-Dieses Tool ist für **legale OSINT-Recherche** und **Bildungszwecke** bestimmt. Nutzer sind selbst verantwortlich für die ethische und rechtskonforme Verwendung. Die Autoren übernehmen keine Haftung für Missbrauch.
+This tool is intended for **legal OSINT research** and **educational purposes**. Users are responsible for ethical and legal compliance. The authors assume no liability for misuse.
 
 ### 💡 **Feature Requests**
-Haben Sie Ideen? [Erstellen Sie ein Issue](https://github.com/yourusername/user_finder/issues/new)!
+Have ideas? [Create an issue](https://github.com/yourusername/user_finder/issues/new)!
 
 ## 📞 Support
 
 - 🐛 **Bug Reports:** [GitHub Issues](https://github.com/yourusername/user_finder/issues)
-- 💬 **Diskussionen:** [GitHub Discussions](https://github.com/yourusername/user_finder/discussions)
+- 💬 **Discussions:** [GitHub Discussions](https://github.com/yourusername/user_finder/discussions)
 
 ---
 
-**⭐ Wenn Ihnen dieses Projekt gefällt, geben Sie ihm einen Stern auf GitHub!**
+**⭐ If you like this project, give it a star on GitHub!**
 
-Entwickelt mit ❤️ für die OSINT-Community
+Developed with ❤️ for the OSINT community

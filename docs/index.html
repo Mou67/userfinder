@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +30,6 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Floating particles animation */
         body::before {
             content: '';
             position: fixed;
@@ -422,7 +421,6 @@
             100% { box-shadow: 0 8px 25px rgba(231, 76, 60, 0.3); }
         }
 
-        /* Results styling */
         .results {
             margin-top: 30px;
         }
@@ -515,7 +513,6 @@
             background: #2980b9;
         }
 
-        /* Confidence Indicators */
         .confidence-high .result-platform::before {
             content: "🟢 ";
         }
@@ -528,7 +525,6 @@
             content: "🔴 ";
         }
 
-        /* Enhanced Spinner */
         .spinner {
             width: 50px;
             height: 50px;
@@ -544,7 +540,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Search progress */
         .search-progress {
             text-align: center;
             padding: 50px;
@@ -572,7 +567,6 @@
             100% { left: 100%; }
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             .container {
                 margin: 10px;
@@ -659,15 +653,15 @@
     <div class="container">
         <div class="header">
             <h1>🕵️ OSINT Username Finder</h1>
-            <p>Professionelle Open Source Intelligence Suche - GitHub Pages Edition</p>
+            <p>Professional Open Source Intelligence Search - GitHub Pages Edition</p>
         </div>
 
         <div class="search-section">
             <div class="warning-banner">
                 <h3>⚠️ GitHub Pages Static Version</h3>
-                <p>Diese Version verwendet statische Platform-Links ohne Live-Verfügbarkeitsprüfung. Für die vollständige OSINT-Funktionalität nutzen Sie die Server-Version.</p>
+                <p>This version uses static platform links without live availability checking. For full OSINT functionality, use the server version.</p>
                 <p style="font-size: 12px; opacity: 0.7; margin-top: 10px;">
-                    💡 Browser-Extension-Fehler werden automatisch ignoriert und beeinträchtigen nicht die Funktionalität
+                    💡 Browser extension errors are automatically ignored and do not affect functionality
                 </p>
             </div>
 
@@ -676,7 +670,7 @@
                     <input 
                         type="text" 
                         id="searchQuery" 
-                        placeholder="🔍 Geben Sie einen Benutzernamen ein..." 
+                        placeholder="🔍 Enter a username..." 
                         autocomplete="off"
                         spellcheck="false"
                     >
@@ -684,7 +678,7 @@
                 </div>
 
                 <div class="search-options">
-                    <h3>🎯 Suchkategorien auswählen:</h3>
+                    <h3>🎯 Select search categories:</h3>
                     <div class="search-type-selector">
                         <div class="search-type-option">
                             <input type="checkbox" id="social" name="categories" value="social" checked>
@@ -692,15 +686,15 @@
                         </div>
                         <div class="search-type-option">
                             <input type="checkbox" id="dev" name="categories" value="dev" checked>
-                            <label for="dev">💻 Entwickler-Plattformen</label>
+                            <label for="dev">💻 Developer Platforms</label>
                         </div>
                         <div class="search-type-option">
                             <input type="checkbox" id="creative" name="categories" value="creative" checked>
-                            <label for="creative">🎨 Kreative Communities</label>
+                            <label for="creative">🎨 Creative Communities</label>
                         </div>
                         <div class="search-type-option">
                             <input type="checkbox" id="gaming" name="categories" value="gaming" checked>
-                            <label for="gaming">🎮 Gaming Plattformen</label>
+                            <label for="gaming">🎮 Gaming Platforms</label>
                         </div>
                         <div class="search-type-option">
                             <input type="checkbox" id="professional" name="categories" value="professional" checked>
@@ -713,7 +707,7 @@
                     </div>
                 </div>
 
-                <button type="submit" id="searchBtn">🔍 Username Suche starten</button>
+                <button type="submit" id="searchBtn">🔍 Start Username Search</button>
             </form>
 
             <div id="results"></div>
@@ -721,8 +715,6 @@
     </div>
 
     <script>
-        // GitHub Pages Compatible Static OSINT Search
-        
         const platforms = {
             social: [
                 { name: 'Instagram', url: 'https://instagram.com/{username}', icon: '📷' },
@@ -773,25 +765,20 @@
             ]
         };
 
-        // Extension-Konflikte vermeiden
         window.addEventListener('error', function(e) {
-            // Ignoriere Extension-Fehler
             if (e.filename && e.filename.includes('content-scripts.js')) {
                 e.preventDefault();
                 return false;
             }
         });
 
-        // Protection against extension conflicts
         (function() {
             'use strict';
             
-            // Prevent extension interference
             const originalQuerySelector = document.querySelector;
             const originalQuerySelectorAll = document.querySelectorAll;
             
             try {
-                // Safe wrapper for querySelector operations
                 window.safeQuerySelector = function(selector) {
                     try {
                         return originalQuerySelector.call(document, selector);
@@ -810,7 +797,6 @@
                     }
                 };
             } catch (e) {
-                // Fallback if protection fails
                 window.safeQuerySelector = function(selector) { return document.querySelector(selector); };
                 window.safeQuerySelectorAll = function(selector) { return document.querySelectorAll(selector); };
             }
@@ -831,11 +817,10 @@
         function startStaticSearch() {
             const username = document.getElementById('searchQuery').value.trim();
             if (!username) {
-                alert('Bitte geben Sie einen Benutzernamen ein!');
+                alert('Please enter a username!');
                 return;
             }
 
-            // Sichere DOM-Abfrage mit Extension-Schutz
             const selectedCategories = Array.from(
                 (window.safeQuerySelectorAll || document.querySelectorAll).call(
                     document, 'input[name="categories"]:checked'
@@ -843,33 +828,29 @@
             ).map(cb => cb.value);
 
             if (selectedCategories.length === 0) {
-                alert('Bitte wählen Sie mindestens eine Suchkategorie aus!');
+                alert('Please select at least one search category!');
                 return;
             }
 
             const resultsDiv = document.getElementById('results');
             const searchBtn = document.getElementById('searchBtn');
             
-            // UI für Suche vorbereiten
             searchBtn.disabled = true;
-            searchBtn.innerHTML = '🔍 Generiere Links...';
+            searchBtn.innerHTML = '🔍 Generating links...';
             
-            // Loading-Anzeige
             resultsDiv.innerHTML = `
                 <div class="search-progress">
                     <div class="spinner"></div>
-                    <h3 style="color: #f39c12; margin: 20px 0;">🔗 Erstelle Platform-Links...</h3>
-                    <p>Generiere direkte Links für "${username}" auf ${selectedCategories.length} Kategorien</p>
+                    <h3 style="color: #f39c12; margin: 20px 0;">🔗 Creating platform links...</h3>
+                    <p>Generating direct links for "${username}" across ${selectedCategories.length} categories</p>
                 </div>
             `;
 
-            // Simuliere kurze Ladezeit für bessere UX
             setTimeout(() => {
                 displayStaticResults(username, selectedCategories);
                 
-                // UI zurücksetzen
                 searchBtn.disabled = false;
-                searchBtn.innerHTML = '🔍 Username Suche starten';
+                searchBtn.innerHTML = '🔍 Start Username Search';
             }, 1500);
         }
 
@@ -877,7 +858,6 @@
             const resultsDiv = document.getElementById('results');
             let allResults = [];
 
-            // Sammle alle Plattformen aus ausgewählten Kategorien
             categories.forEach(category => {
                 if (platforms[category]) {
                     platforms[category].forEach(platform => {
@@ -893,14 +873,13 @@
             if (allResults.length === 0) {
                 resultsDiv.innerHTML = `
                     <div style="text-align: center; padding: 40px; color: #cccccc;">
-                        <h3>🚫 Keine Kategorien ausgewählt</h3>
-                        <p>Bitte wählen Sie mindestens eine Suchkategorie aus.</p>
+                        <h3>🚫 No categories selected</h3>
+                        <p>Please select at least one search category.</p>
                     </div>
                 `;
                 return;
             }
 
-            // Gruppiere nach Kategorien
             const groupedResults = {};
             allResults.forEach(result => {
                 if (!groupedResults[result.category]) {
@@ -910,10 +889,10 @@
             });
 
             const categoryNames = {
-                social: '👥 Social Media Plattformen',
-                dev: '💻 Entwickler-Plattformen',
-                creative: '🎨 Kreative Communities',
-                gaming: '🎮 Gaming Plattformen',
+                social: '👥 Social Media Platforms',
+                dev: '💻 Developer Platforms',
+                creative: '🎨 Creative Communities',
+                gaming: '🎮 Gaming Platforms',
                 professional: '💼 Professional Networks',
                 messaging: '💬 Messaging & Communication'
             };
@@ -921,18 +900,17 @@
             let resultsHTML = `
                 <div style="margin-bottom: 30px; text-align: center;">
                     <h2 style="color: #27ae60; margin-bottom: 10px;">
-                        🎯 Profile Links für "${username}"
+                        🎯 Profile Links for "${username}"
                     </h2>
                     <div style="background: #3a3a50; padding: 15px; border-radius: 10px; margin-bottom: 20px;">
-                        <h3 style="color: #f39c12;">🔗 Generiert: ${allResults.length} Platform-Links</h3>
+                        <h3 style="color: #f39c12;">🔗 Generated: ${allResults.length} Platform Links</h3>
                         <p style="color: #cccccc; font-size: 14px;">
-                            Klicken Sie auf "Profil öffnen" um zu prüfen, ob der Account existiert
+                            Click "Open Profile" to check if the account exists
                         </p>
                     </div>
                 </div>
             `;
 
-            // Zeige Ergebnisse nach Kategorien
             for (const [category, results] of Object.entries(groupedResults)) {
                 resultsHTML += `
                     <div class="result-category confidence-medium">
@@ -946,11 +924,11 @@
                                     <div class="result-info">
                                         <div class="result-platform">${result.icon} ${result.name}</div>
                                         <div class="result-details">
-                                            Direkter Link zum Profil | Status: Unbekannt
+                                            Direct link to profile | Status: Unknown
                                         </div>
                                     </div>
                                     <a href="${result.url}" target="_blank" class="result-link">
-                                        Profil öffnen
+                                        Open Profile
                                     </a>
                                 </div>
                             `).join('')}
@@ -959,32 +937,31 @@
                 `;
             }
 
-            // Zusätzliche Informationen
             resultsHTML += `
                 <div style="background: #2a2a40; padding: 20px; border-radius: 10px; margin-top: 30px; border-left: 4px solid #3498db;">
-                    <h4 style="color: #3498db; margin-bottom: 15px;">ℹ️ GitHub Pages Hinweise:</h4>
+                    <h4 style="color: #3498db; margin-bottom: 15px;">ℹ️ GitHub Pages Notes:</h4>
                     <div style="color: #cccccc; font-size: 14px; line-height: 1.6;">
-                        <p><strong>🔗 Statische Links:</strong> Diese Version generiert direkte Links zu Profilen ohne Live-Verfügbarkeitsprüfung.</p>
-                        <p><strong>✅ Überprüfung:</strong> Klicken Sie auf "Profil öffnen" um zu sehen, ob der Account existiert.</p>
-                        <p><strong>🚀 Vollversion:</strong> Für automatische Verfügbarkeitsprüfung nutzen Sie die Server-basierte Version.</p>
-                        <p><strong>🔒 Datenschutz:</strong> Alle Suchen erfolgen client-seitig ohne Server-Übertragung.</p>
+                        <p><strong>🔗 Static Links:</strong> This version generates direct links to profiles without live availability checking.</p>
+                        <p><strong>✅ Verification:</strong> Click "Open Profile" to see if the account exists.</p>
+                        <p><strong>🚀 Full Version:</strong> For automatic availability checking, use the server-based version.</p>
+                        <p><strong>🔒 Privacy:</strong> All searches are performed client-side without server transmission.</p>
                     </div>
                 </div>
                 
                 <div style="background: #2a2a40; padding: 20px; border-radius: 10px; margin-top: 20px; border-left: 4px solid #27ae60;">
-                    <h4 style="color: #27ae60; margin-bottom: 15px;">🔍 Weitere OSINT-Tipps:</h4>
+                    <h4 style="color: #27ae60; margin-bottom: 15px;">🔍 Additional OSINT Tips:</h4>
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
                         <div style="background: #3a3a50; padding: 15px; border-radius: 8px;">
-                            <strong style="color: #f39c12;">🔄 Variationen testen:</strong><br>
-                            Probieren Sie ${username}1, ${username}_, _${username}
+                            <strong style="color: #f39c12;">🔄 Test Variations:</strong><br>
+                            Try ${username}1, ${username}_, _${username}
                         </div>
                         <div style="background: #3a3a50; padding: 15px; border-radius: 8px;">
-                            <strong style="color: #e74c3c;">🌐 Google Suche:</strong><br>
-                            Suchen Sie nach "${username}" site:instagram.com
+                            <strong style="color: #e74c3c;">🌐 Google Search:</strong><br>
+                            Search for "${username}" site:instagram.com
                         </div>
                         <div style="background: #3a3a50; padding: 15px; border-radius: 8px;">
-                            <strong style="color: #9b59b6;">📧 Email-Ableitung:</strong><br>
-                            Testen Sie ${username}@gmail.com
+                            <strong style="color: #9b59b6;">📧 Email Derivation:</strong><br>
+                            Test ${username}@gmail.com
                         </div>
                     </div>
                 </div>
@@ -993,11 +970,9 @@
             resultsDiv.innerHTML = resultsHTML;
         }
 
-        // Auto-select/deselect functionality
         const checkboxes = document.querySelectorAll('input[name="categories"]');
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', function() {
-                // Visual feedback für Checkbox-Änderungen
                 this.closest('.search-type-option').style.transform = 'scale(0.98)';
                 setTimeout(() => {
                     this.closest('.search-type-option').style.transform = '';
@@ -1005,13 +980,12 @@
             });
         });
 
-        // Placeholder animation
         const searchInput = document.getElementById('searchQuery');
         const placeholders = [
-            '🔍 Geben Sie einen Benutzernamen ein...',
-            '👤 z.B. john_doe, alex2024, sarah_m...',
-            '🌐 Durchsucht über 30+ Plattformen...',
-            '⚡ Schnelle statische Link-Generierung...'
+            '🔍 Enter a username...',
+            '👤 e.g. john_doe, alex2024, sarah_m...',
+            '🌐 Searches across 30+ platforms...',
+            '⚡ Fast static link generation...'
         ];
         
         let placeholderIndex = 0;
