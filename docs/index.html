@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <meta name="robots" content="noindex, nofollow">
     <title>OSINT Username Finder - GitHub Pages</title>
     <style>
         * {
@@ -664,6 +666,9 @@
             <div class="warning-banner">
                 <h3>⚠️ GitHub Pages Static Version</h3>
                 <p>Diese Version verwendet statische Platform-Links ohne Live-Verfügbarkeitsprüfung. Für die vollständige OSINT-Funktionalität nutzen Sie die Server-Version.</p>
+                <p style="font-size: 12px; opacity: 0.7; margin-top: 10px;">
+                    💡 Browser-Extension-Fehler werden automatisch ignoriert und beeinträchtigen nicht die Funktionalität
+                </p>
             </div>
 
             <form class="search-form" id="searchForm">
@@ -768,6 +773,49 @@
             ]
         };
 
+        // Extension-Konflikte vermeiden
+        window.addEventListener('error', function(e) {
+            // Ignoriere Extension-Fehler
+            if (e.filename && e.filename.includes('content-scripts.js')) {
+                e.preventDefault();
+                return false;
+            }
+        });
+
+        // Protection against extension conflicts
+        (function() {
+            'use strict';
+            
+            // Prevent extension interference
+            const originalQuerySelector = document.querySelector;
+            const originalQuerySelectorAll = document.querySelectorAll;
+            
+            try {
+                // Safe wrapper for querySelector operations
+                window.safeQuerySelector = function(selector) {
+                    try {
+                        return originalQuerySelector.call(document, selector);
+                    } catch (e) {
+                        console.warn('Invalid selector blocked:', selector);
+                        return null;
+                    }
+                };
+                
+                window.safeQuerySelectorAll = function(selector) {
+                    try {
+                        return originalQuerySelectorAll.call(document, selector);
+                    } catch (e) {
+                        console.warn('Invalid selector blocked:', selector);
+                        return [];
+                    }
+                };
+            } catch (e) {
+                // Fallback if protection fails
+                window.safeQuerySelector = function(selector) { return document.querySelector(selector); };
+                window.safeQuerySelectorAll = function(selector) { return document.querySelectorAll(selector); };
+            }
+        })();
+
         document.getElementById('searchForm').addEventListener('submit', function(e) {
             e.preventDefault();
             startStaticSearch();
@@ -787,8 +835,12 @@
                 return;
             }
 
-            const selectedCategories = Array.from(document.querySelectorAll('input[name="categories"]:checked'))
-                .map(cb => cb.value);
+            // Sichere DOM-Abfrage mit Extension-Schutz
+            const selectedCategories = Array.from(
+                (window.safeQuerySelectorAll || document.querySelectorAll).call(
+                    document, 'input[name="categories"]:checked'
+                )
+            ).map(cb => cb.value);
 
             if (selectedCategories.length === 0) {
                 alert('Bitte wählen Sie mindestens eine Suchkategorie aus!');
