@@ -204,7 +204,6 @@ Haben Sie Ideen? [Erstellen Sie ein Issue](https://github.com/yourusername/user_
 
 - 🐛 **Bug Reports:** [GitHub Issues](https://github.com/yourusername/user_finder/issues)
 - 💬 **Diskussionen:** [GitHub Discussions](https://github.com/yourusername/user_finder/discussions)
-- 📧 **Kontakt:** your.email@example.com
 
 ---
 
