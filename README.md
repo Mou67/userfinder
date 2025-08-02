@@ -26,7 +26,7 @@ Ein professionelles **Open Source Intelligence (OSINT)** Tool zur Suche von Benu
 ## 🚀 Live Demo
 
 ### GitHub Pages Version (Empfohlen für die meisten Nutzer)
-**🌐 [Live Demo auf GitHub Pages](https://yourusername.github.io/user_finder/)**
+**🌐 [Live Demo auf GitHub Pages](https://mou67.github.io/userfinder/)**
 
 ### Server Version (Für erweiterte OSINT-Funktionen)
 ```bash
@@ -197,16 +197,6 @@ MIT License - siehe [LICENSE](LICENSE) für Details.
 
 Dieses Tool ist für **legale OSINT-Recherche** und **Bildungszwecke** bestimmt. Nutzer sind selbst verantwortlich für die ethische und rechtskonforme Verwendung. Die Autoren übernehmen keine Haftung für Missbrauch.
 
-## 🌟 Features Roadmap
-
-### 🔮 **Geplante Features:**
-- [ ] PWA (Progressive Web App) Support
-- [ ] Dark/Light Mode Toggle
-- [ ] Export-Funktionen (PDF, CSV)
-- [ ] Browser-Extension
-- [ ] Mobile App (React Native)
-- [ ] API-Integration für mehr Plattformen
-
 ### 💡 **Feature Requests**
 Haben Sie Ideen? [Erstellen Sie ein Issue](https://github.com/yourusername/user_finder/issues/new)!
 
@@ -214,7 +204,6 @@ Haben Sie Ideen? [Erstellen Sie ein Issue](https://github.com/yourusername/user_
 
 - 🐛 **Bug Reports:** [GitHub Issues](https://github.com/yourusername/user_finder/issues)
 - 💬 **Diskussionen:** [GitHub Discussions](https://github.com/yourusername/user_finder/discussions)
-- 📧 **Kontakt:** your.email@example.com
 
 ---
 
