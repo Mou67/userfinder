@@ -26,7 +26,7 @@ Ein professionelles **Open Source Intelligence (OSINT)** Tool zur Suche von Benu
 ## 🚀 Live Demo
 
 ### GitHub Pages Version (Empfohlen für die meisten Nutzer)
-**🌐 [Live Demo auf GitHub Pages](https://yourusername.github.io/user_finder/)**
+**🌐 [Live Demo auf GitHub Pages](https://mou67.github.io/userfinder/)**
 
 ### Server Version (Für erweiterte OSINT-Funktionen)
 ```bash
