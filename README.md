@@ -197,16 +197,6 @@ MIT License - siehe [LICENSE](LICENSE) für Details.
 
 Dieses Tool ist für **legale OSINT-Recherche** und **Bildungszwecke** bestimmt. Nutzer sind selbst verantwortlich für die ethische und rechtskonforme Verwendung. Die Autoren übernehmen keine Haftung für Missbrauch.
 
-## 🌟 Features Roadmap
-
-### 🔮 **Geplante Features:**
-- [ ] PWA (Progressive Web App) Support
-- [ ] Dark/Light Mode Toggle
-- [ ] Export-Funktionen (PDF, CSV)
-- [ ] Browser-Extension
-- [ ] Mobile App (React Native)
-- [ ] API-Integration für mehr Plattformen
-
 ### 💡 **Feature Requests**
 Haben Sie Ideen? [Erstellen Sie ein Issue](https://github.com/yourusername/user_finder/issues/new)!
 
